@@ -6,6 +6,8 @@ $(document).ready(function(){
   let paineladmin  = $("#paineladmin");
   let sair         = $("#sair");
 
+  $('.item').closest('.menu').find('.submenu').slideUp();
+
   $('.menu .ui.checkbox').checkbox({
     onChecked: function() {
      $(this).parents('.item').addClass('activeSubMenu');
@@ -15,7 +17,19 @@ $(document).ready(function(){
    }
   });
 
-  $('.item').closest('.menu').find('.submenu').slideUp();
+  $('.gridly').gridly({
+     base: 60, // px
+     gutter: 20, // px
+     columns: 12
+   });
+
+   $('.gridly').gridly('draggable', 'off');
+});
+
+$('.header_statusagente').mousedown(function() {
+    $('.gridly').gridly('draggable', 'on');
+}).mouseup(function() {
+    $('.gridly').gridly('draggable', 'off');
 });
 
 let toggleSubMenu = (elem, classSubMenu) => {

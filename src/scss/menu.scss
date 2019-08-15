@@ -85,3 +85,35 @@
   position: fixed;
   z-index: 2048;
 }
+
+.containerDashboards{
+  width: 100%;
+  height: 100%;
+  padding: 50px 10px 10px 210px;
+  position: absolute;
+
+  .gridly{
+    position: relative;
+
+    .header_statusagente{
+      background-color: $grey_400;
+      width: 100%;
+      padding: 5px;
+      text-align: center;
+      cursor: move;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+
+    #statusagente_containerDashboards{
+      min-width: 250px;
+      min-height: 250px;
+      overflow: auto;
+      border: 1px solid $grey_400;
+      border-radius: 5px;
+      padding: 10px;
+      background-color: $grey_900;
+      resize: both;
+    }
+  }
+}
