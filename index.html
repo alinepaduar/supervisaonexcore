@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Metas -->
+    <meta charset="utf-8">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="src/css/menu.css">
+    <link rel="stylesheet" href="src/libs/semantic/semantic.css">
+
+    <!-- Título da Página -->
+    <title>NEXVisor</title>
+  </head>
+  <body>
+
+    <!-- Menu Horizontal -->
+    <section class="menuHorizontal"></section>
+    <!-- /Fim Menu Horizontal -->
+
+    <!-- Menu Vertical -->
+    <section class="menuVertical">
+      <div class="logo_menuVertical">
+        <img src="src/img/logo-nex-visor.png" alt="Logo NEXVisor">
+      </div>
+      <div class="ui vertical menu">
+        <a class="item" id="dashboards" onclick="toggleSubMenu($(this), 'dashboards_dashboards')">
+          <i class="fas fa-columns"></i>
+          Dashboards
+        </a>
+
+        <!-- SubMenu -->
+        <a class="item dashboards_dashboards submenu" id="visaoGeral_dashboards">
+          <div class="ui checkbox">
+            <input type="checkbox" name="visaoGeral_dashboards">
+            <label>Visão Geral</label>
+          </div>
+        </a>
+        <a class="item dashboards_dashboards submenu" id="agentes_dashboards">
+          <div class="ui checkbox">
+            <input type="checkbox" name="agentes_dashboards">
+            <label>Agentes</label>
+          </div>
+        </a>
+        <a class="item dashboards_dashboards submenu" id="assistenteVoz_dashboards">
+          <div class="ui checkbox">
+            <input type="checkbox" name="assistenteVoz_dashboards">
+            <label>Assistente de Voz</label>
+          </div>
+        </a>
+        <a class="item dashboards_dashboards submenu" id="assistenteChat_dashboards">
+          <div class="ui checkbox">
+            <input type="checkbox" name="assistenteChat_dashboards">
+            <label>Assistente de Chat</label>
+          </div>
+        </a>
+        <a class="item dashboards_dashboards submenu" id="excecoes_dashboards">
+          <div class="ui checkbox">
+            <input type="checkbox" name="excecoes_dashboards">
+            <label>Exceções</label>
+          </div>
+        </a>
+        <a class="item dashboards_dashboards submenu" id="filas_dashboards">
+          <div class="ui checkbox">
+            <input type="checkbox" name="filas_dashboards">
+            <label>Filas</label>
+          </div>
+        </a>
+        <a class="item dashboards_dashboards submenu" id="mensageiro_dashboards">
+          <div class="ui checkbox">
+            <input type="checkbox" name="mensageiro_dashboards">
+            <label>Mensageiro</label>
+          </div>
+        </a>
+        <a class="item dashboards_dashboards submenu" id="statusAgente_dashboards">
+          <div class="ui checkbox">
+            <input type="checkbox" name="statusAgente_dashboards">
+            <label>Status Agente</label>
+          </div>
+        </a>
+        <a class="item dashboards_dashboards submenu" id="statusCampanha_dashboards">
+          <div class="ui checkbox">
+            <input type="checkbox" name="statusCampanha_dashboards">
+            <label>Status Campanha</label>
+          </div>
+        </a>
+        <a class="item dashboards_dashboards submenu" id="statusFila_dashboards">
+          <div class="ui checkbox">
+            <input type="checkbox" name="statusFila_dashboards">
+            <label>Status Fila</label>
+          </div>
+        </a>
+        <a class="item dashboards_dashboards submenu" id="statusReceptivo_dashboards">
+          <div class="ui checkbox">
+            <input type="checkbox" name="statusReceptivo_dashboards">
+            <label>Status Receptivo</label>
+          </div>
+        </a>
+        <a class="item dashboards_dashboards submenu" id="troncos_dashboards">
+          <div class="ui checkbox">
+            <input type="checkbox" name="troncos_dashboards">
+            <label>Troncos</label>
+          </div>
+        </a>
+        <!-- /Fim SubMenu -->
+
+        <a class="item" id="agrupamentos" onclick="toggleSubMenu($(this))">
+          <i class="fas fa-layer-group"></i>
+          Agrupamentos
+        </a>
+        <a class="item" id="alertas" onclick="toggleSubMenu($(this))">
+          <i class="fas fa-exclamation-triangle"></i>
+          Alertas
+        </a>
+        <a class="item" id="monitorar" onclick="toggleSubMenu($(this))">
+          <i class="fas fa-eye"></i>
+          Monitorar
+        </a>
+        <a class="item" id="paineladmin" onclick="toggleSubMenu($(this))">
+          <i class="fas fa-user-cog"></i>
+          Painel Admin
+        </a>
+        <a class="item" id="sair" onclick="toggleSubMenu($(this))">
+          <i class="fas fa-sign-out-alt"></i>
+          Sair
+        </a>
+      </div>
+    </section>
+    <!-- /Fim Menu Vertical -->
+
+    <!-- Arquivos Javascript -->
+    <script src="src/libs/jquery/jquery.js" charset="utf-8"></script>
+    <script src="src/libs/semantic/semantic.js" charset="utf-8"></script>
+    <script src="src/libs/fontawesome/fontawesome.js" charset="utf-8"></script>
+    <script src="src/js/menu.js" charset="utf-8"></script>
+  </body>
+</html>
