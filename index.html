@@ -15,7 +15,13 @@
   <body>
 
     <!-- Menu Horizontal -->
-    <section class="menuHorizontal"></section>
+    <section class="menuHorizontal">
+      <div class="ui top attached tabular menu">
+        <a class="active item" data-tab="first">Área 01</a>
+        <a class="item" data-tab="second">Área 02</a>
+        <a class="item" data-tab="third">Área 03</a>
+      </div>
+    </section>
     <!-- /Fim Menu Horizontal -->
 
     <!-- Menu Vertical -->
@@ -86,7 +92,7 @@
         </a>
         <a class="item dashboards_dashboards submenu" id="statusFila_dashboards">
           <div class="ui checkbox">
-            <input type="checkbox" name="statusFila_dashboards">
+            <input type="checkbox" name="statusFila_dashboards" onchange="togglePainel($(this), 'statusagente_containerDashboards')">
             <label>Status Fila</label>
           </div>
         </a>
@@ -130,44 +136,56 @@
 
     <!-- Container Dashboards -->
     <section class="containerDashboards">
-      <div class="gridly">
-        <div id="statusagente_containerDashboards">
-          <div class="header_statusagente">Status Fila</div>
-          <div class="containe_statusagenter">
-            <div class="ui cards">
-              <div class="card">
-                <div class="content">
-                  <div class="header">Marketing</div>
-                  <div class="meta">Fila</div>
-                  <div class="description">
-                    Elliot Fu is a film-maker from New York.
+      <div class="ui bottom attached active tab segment" data-tab="first">
+        <div class="gridly">
+          <div id="statusagente_containerDashboards">
+            <div class="header_statusagente">Status Fila</div>
+            <div class="ui buttons" style="margin-bottom: 10px;">
+                <button class="ui mini button" onclick="adicionaEmFila($(this))">Em Fila</button>
+                <button class="ui mini button" onclick="adicionaEmPausa($(this))">Em Pausa</button>
+                <button class="ui mini button" onclick="adicionaIndisponivel($(this))">Indisponível</button>
+                <button class="ui mini button" onclick="adicionaReceptivel($(this))">Receptivo</button>
+                <button class="ui mini button" onclick="adicionaAtivo($(this))">Ativo</button>
+                <button class="ui mini button" onclick="adicionaDisp($(this))">Disponível</button>
+                <button class="ui mini button" onclick="adicionaLogados($(this))">Logados</button>
+                <button class="ui mini button" onclick="adicionaDeslog($(this))">Deslogados</button>
+            </div>
+            <div class="containe_statusagenter">
+              <div class="ui cards">
+                <div class="card">
+                  <div class="content">
+                    <div class="header">Marketing</div>
+                    <div class="meta">Fila</div>
+                    <div class="description">
+                      <div id="chart_marketing"></div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="card">
-                <div class="content">
-                  <div class="header">Comercial</div>
-                  <div class="meta">Fila</div>
-                  <div class="description">
-                    Veronika Ossi is a set designer living in New York who enjoys kittens, music, and partying.
+                <div class="card">
+                  <div class="content">
+                    <div class="header">Comercial</div>
+                    <div class="meta">Fila</div>
+                    <div class="description">
+                      <div id="chart_comercial"></div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="card">
-                <div class="content">
-                  <div class="header">Suporte</div>
-                  <div class="meta">Fila</div>
-                  <div class="description">
-                    Jenny is a student studying Media Management at the New School
+                <div class="card">
+                  <div class="content">
+                    <div class="header">Suporte</div>
+                    <div class="meta">Fila</div>
+                    <div class="description">
+                      <div id="chart_suporte"></div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="card">
-                <div class="content">
-                  <div class="header">Financeiro</div>
-                  <div class="meta">Fila</div>
-                  <div class="description">
-                    Jenny is a student studying Media Management at the New School
+                <div class="card">
+                  <div class="content">
+                    <div class="header">Financeiro</div>
+                    <div class="meta">Fila</div>
+                    <div class="description">
+                      <div id="chart_financeiro"></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -182,8 +200,10 @@
     <script src="src/libs/jquery/jquery.js" charset="utf-8"></script>
     <script src="src/libs/semantic/semantic.js" charset="utf-8"></script>
     <script src="src/libs/fontawesome/fontawesome.js" charset="utf-8"></script>
-    <script src="src/js/menu.js" charset="utf-8"></script>]
+    <script src="src/js/menu.js" charset="utf-8"></script>
+    <script src="src/js/graficos.js" charset="utf-8"></script>
     <script src="src/libs/gridly/gridly.js" charset="utf-8"></script>
+    <script src="src/libs/apexcharts/apexcharts.js" charset="utf-8"></script>
     <script
   src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
   integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="

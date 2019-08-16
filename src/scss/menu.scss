@@ -84,6 +84,19 @@
   background-color: $grey_900;
   position: fixed;
   z-index: 2048;
+  padding-left: 200px;
+}
+
+.ui.tabular.menu .active.item{
+  color: black!important;
+}
+
+.ui.tabular.menu .item{
+  color: white!important;
+}
+
+.ui.attached.tabular.menu{
+  height: 40px!important;
 }
 
 .containerDashboards{
@@ -107,13 +120,19 @@
 
     #statusagente_containerDashboards{
       min-width: 250px;
-      min-height: 250px;
+      min-height: 300px;
       overflow: auto;
       border: 1px solid $grey_400;
       border-radius: 5px;
       padding: 10px;
-      background-color: $grey_900;
+      background-color: $grey_200;
       resize: both;
+      display: none;
     }
   }
+}
+
+.ui.segment[class*="bottom attached"]{
+  margin-bottom: 0px!important;
+  height: 100%;
 }

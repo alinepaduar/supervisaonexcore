@@ -17,6 +17,8 @@ $(document).ready(function(){
    }
   });
 
+  $('.menu .item').tab();
+
   $('.gridly').gridly({
      base: 60, // px
      gutter: 20, // px
@@ -37,10 +39,14 @@ let toggleSubMenu = (elem, classSubMenu) => {
     elem.removeClass('active');
     elem.closest('.menu').find('.'+classSubMenu).slideUp();
   } else {
-
     $('.item').closest('.menu').find('.submenu').slideUp();
     $('.vertical .item').removeClass('active');
     elem.addClass('active');
     elem.closest('.menu').find('.'+classSubMenu).slideDown();
   }
+}
+
+let togglePainel = (elem, idPainel) => {
+  let div = elem.parents('.checkbox');
+  div.hasClass('checked') ? $('#'+idPainel).show() : $('#'+idPainel).hide();
 }
